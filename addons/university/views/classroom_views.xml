@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- ...model definition from before... -->
+        <record id="classroom_list_view" model="ir.ui.view">
+            <!-- <field name="model_id" ref="estate.model_real_estate_property" /> -->
+            <field name="name">classroom list</field>
+            <field name="model">university.classroom</field>
+            <field name="arch" type="xml">
+                <tree string="classroom List">
+                    <field name="classroom_name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <!-- definition of form -->
+        <record id="classroom_form_view" model="ir.ui.view">
+            <field name="name">classroom Form</field>
+            <field name="model">university.classroom</field>
+            <field name="arch" type="xml">
+                <form string="classroom Form">
+                    <sheet>
+                        <group>
+                            <field name="classroom_name"/>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="num_prof"/>
+                            <field name="num_stu"/>
+                        </group>
+                        <notebook>
+                            <page string="List of professors">
+                                <field name="professor_ids"></field>
+                            </page>
+                            <page string="List of students">
+                                <field name="student_ids"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>    
+        <!-- action opening the classroom form view -->
+        <record id="action_classroom_form" model="ir.actions.act_window">
+            <field name="name">classroom window</field>
+            <field name="res_model">university.classroom</field>
+            <field name="view_mode">tree,form</field>
+        </record>    
+
+        <!-- top menu item -->
+        <menuitem
+            id="university_menu_root"
+            name="University"
+            sequence="1"/>
+
+        <!-- menu item categorizing classroom menu item -->
+        <menuitem
+            id="university_classroom_cat"
+            name="Classrooms"
+            parent="university_menu_root"
+            sequence="1"/>
+
+        <!-- action -->
+        <menuitem
+            id="university_classroom_list"
+            name="List of classrooms"
+            parent="university_classroom_cat"
+            action="action_classroom_form"
+            sequence="1"/>
+            
+    </data>    
+</odoo>

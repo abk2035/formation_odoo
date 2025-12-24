@@ -1,0 +1,6 @@
+@echo off
+echo Arrêt du service Odoo...
+net stop odoo-server-17.0
+echo Démarrage du serveur Odoo...
+net start odoo-server-17.0 
+echo Service Odoo redémarré.

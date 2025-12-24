@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- ...model definition from before... -->
+        <record id="subject_list_view" model="ir.ui.view">
+            <!-- <field name="model_id" ref="estate.model_real_estate_property" /> -->
+            <field name="name">subject list</field>
+            <field name="model">university.subject</field>
+            <field name="arch" type="xml">
+                <tree string="subject List">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <!-- definition of form -->
+        <record id="subject_form_view" model="ir.ui.view">
+            <field name="name">subject Form</field>
+            <field name="model">university.subject</field>
+            <field name="arch" type="xml">
+                <form string="subject Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>    
+        <!-- action opening the subject form view -->
+        <record id="action_subject_form" model="ir.actions.act_window">
+            <field name="name">Subject window</field>
+            <field name="res_model">university.subject</field>
+            <field name="view_mode">tree,form</field>
+        </record>    
+
+        <!-- top menu item -->
+        <menuitem
+            id="university_menu_root"
+            name="University"
+            sequence="1"/>
+
+        <!-- menu item categorizing subject menu item -->
+        <menuitem
+            id="university_subject_cat"
+            name="Subjects"
+            parent="university_menu_root"
+            sequence="1"/>
+
+        <!-- action -->
+        <menuitem
+            id="university_subject_list"
+            name="List of Subjects"
+            parent="university_subject_cat"
+            action="action_subject_form"
+            sequence="1"/>
+            
+    </data>    
+</odoo>

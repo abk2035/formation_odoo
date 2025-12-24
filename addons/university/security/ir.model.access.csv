@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student,Accès étudiants,model_university_student,base.group_user,1,1,1,1
+access_professor,Accès professeur,model_university_professor,base.group_user,1,1,1,1
+access_classroom,Accès des classes,model_university_classroom,base.group_user,1,1,1,1
+access_department,Accès au departement,model_university_department,base.group_user,1,1,1,1
+access_subject,Accès aux sujets,model_university_subject,base.group_user,1,1,1,1

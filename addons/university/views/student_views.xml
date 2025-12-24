@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- ...model definition from before... -->
+        <record id="student_list_view" model="ir.ui.view">
+            <!-- <field name="model_id" ref="estate.model_real_estate_property" /> -->
+            <field name="name">Student list</field>
+            <field name="model">university.student</field>
+            <field name="arch" type="xml">
+                <tree string="Student List" >
+                    <field name="f_name"/>
+                    <field name="l_name"/>
+                    <field name="sexe"/>
+                    <field name="identity_card"/>
+                    <field name="birthday"/>
+                    <field name="registration_date"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <!-- definition of form -->
+        <record id="student_form_view" model="ir.ui.view">
+            <field name="name">Student Form</field>
+            <field name="model">university.student</field>
+            <field name="arch" type="xml">
+                <form string="Student Form">
+                    <header>
+                        <button name="custom_function" type="object" string="Custom Action" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                            <group>
+                                <field name="f_name"/>
+                                <field name="l_name"/>
+                                <field name="sexe"/>
+                                <field name="identity_card"/>
+                                <field name="birthday"/>                                                        
+                                <field name="registration_date"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="active"/>
+                                <field name="department_id"/>
+                                <field name="classroom_id"/>
+                            </group>    
+                    </sheet>
+                </form>
+            </field>
+        </record>    
+        <!-- action opening the student form view -->
+        <record id="action_student_form" model="ir.actions.act_window">
+            <field name="name">Student window</field>
+            <field name="res_model">university.student</field>
+            <field name="view_mode">tree,form</field>
+        </record>    
+
+        <!-- top menu item -->
+        <menuitem
+            id="university_menu_root"
+            name="University"
+            sequence="1"/>
+
+        <!-- menu item categorizing student menu item -->
+        <menuitem
+            id="university_student_cat"
+            name="Students"
+            parent="university_menu_root"
+            sequence="1"/>
+
+        <!-- action -->
+        <menuitem
+            id="university_student_list"
+            name="List of students"
+            parent="university_student_cat"
+            action="action_student_form"
+            sequence="1"/>
+            
+    </data>    
+</odoo>
