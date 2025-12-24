@@ -1,0 +1,28 @@
+# IDE
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*.bat
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Configuration
+.env
+/config/
+*.db
+
+# Logs
+*.log
+
+# Archives
+*.zip
+*.tar
+*.bak
+
+# Windows
+.bat
+*.tmp
