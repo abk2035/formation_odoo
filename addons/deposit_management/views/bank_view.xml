@@ -41,8 +41,7 @@
     </record>
 
     <menuitem name="Deposit Management" id="dm_bank_root_menu" />
-    <menuitem name="Bank" id="dm_bank_list" parent="dm_bank_root_menu"/>
-    <menuitem name="Banks" id="dm_banks" parent="dm_bank_list"
-        action="dm_bank_windows_action"/>
+    <menuitem name="Banks" id="dm_bank_list" parent="dm_bank_root_menu"/>
+    <menuitem name="Banks List" id="dm_banks" parent="dm_bank_list" action="dm_bank_windows_action"/>
 
 </odoo>

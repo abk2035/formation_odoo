@@ -23,7 +23,8 @@
         "views/customer_view.xml",
         "report/dm_bank_transaction_report.xml"
     ],
-    'images': ['static/icon.png'],
+    'icon':'deposit_management/static/description/icon.png',
+    'images': ['static/description/icon.png'],
     'application':True,
     'installable':True,
 

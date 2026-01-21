@@ -71,7 +71,7 @@
     </template>
 
     <record id="action_report_bank_transaction_slip" model="ir.actions.report">
-        <field name="name">Bank Transaction Report</field>
+        <field name="name">Bank_Transaction_Report</field>
         <field name="model">dm.bank.transactions</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">deposit_management.dm_bank_transaction_receipt_report</field>
